@@ -30,6 +30,8 @@ class ViewController: UIViewController {
         tapOnButton = tapMeButton.rx.tap.flatMapLatest { (_: ()) -> Observable<String> in
             print("tap")
             return self.fetchResult()
+                .observeOn(MainScheduler.instance)
+                .catchErrorJustReturn("an error occured")
         }
         
         
