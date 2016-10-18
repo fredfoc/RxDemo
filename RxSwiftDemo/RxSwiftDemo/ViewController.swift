@@ -41,6 +41,12 @@ class ViewController: UIViewController {
             .bindTo(myLabel.rx.text)
             .addDisposableTo(disposeBag)
         
+        tapOnButton?.map { (value) -> String in
+            return "value is \(value)"
+            }
+            .bindTo(waitLabel.rx.text)
+            .addDisposableTo(disposeBag)
+        
     }
     
     func fetchResult() -> Observable<String>{
