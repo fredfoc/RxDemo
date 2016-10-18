@@ -33,6 +33,7 @@ class ViewController: UIViewController {
                 .observeOn(MainScheduler.instance)
                 .catchErrorJustReturn("an error occured")
         }
+            .shareReplay(1)
         
         
         tapOnButton?.map { (value) -> String in
