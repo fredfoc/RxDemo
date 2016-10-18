@@ -27,6 +27,27 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tapOnButton = tapMeButton.rx.tap.flatMapLatest { (_: ()) -> Observable<String> in
+            print("tap")
+            return self.fetchResult()
+        }
+        
+        
+        tapOnButton?.map { (value) -> String in
+                return "value is \(value)"
+            }
+            .bindTo(myLabel.rx.text)
+            .addDisposableTo(disposeBag)
+        
+    }
+    
+    func fetchResult() -> Observable<String>{
+        count += 1
+        if count % 5 == 0 {
+            return Observable.error(MyError.subjectError)
+        } else {
+            return Observable.just("value : \(count)")
+        }
     }
 }
 
