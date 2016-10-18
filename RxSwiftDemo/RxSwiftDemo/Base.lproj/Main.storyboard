@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RxSwiftDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUU-V0-OF0">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="253" id="R2z-I6-UxX"/>
+                                    <constraint firstAttribute="height" constant="21" id="VYU-Gt-nyc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zX4-St-zDm">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="J85-vP-YNs"/>
+                                    <constraint firstAttribute="height" constant="30" id="v1s-Eu-k4S"/>
+                                </constraints>
+                                <state key="normal" title="Tap me"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wait" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IG-Rt-QxT">
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="253" id="Bqx-Oa-xoU"/>
+                                    <constraint firstAttribute="height" constant="21" id="Lrw-A9-iRf"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="kr8-6b-TJF"/>
+                                    <constraint firstAttribute="width" constant="253" id="y2K-dc-WzQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="VUU-V0-OF0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="48m-JY-fCc"/>
+                            <constraint firstItem="6IG-Rt-QxT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="53d-Ti-vox"/>
+                            <constraint firstItem="VUU-V0-OF0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="8lu-vq-asw"/>
+                            <constraint firstItem="zX4-St-zDm" firstAttribute="top" secondItem="VUU-V0-OF0" secondAttribute="bottom" constant="20" id="9yy-lM-O7v"/>
+                            <constraint firstItem="6IG-Rt-QxT" firstAttribute="top" secondItem="zX4-St-zDm" secondAttribute="bottom" constant="10" id="GtX-CH-Haj"/>
+                            <constraint firstItem="zX4-St-zDm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="14" id="Ydo-QW-eF5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myLabel" destination="VUU-V0-OF0" id="Fne-aQ-qIM"/>
+                        <outlet property="tapMeButton" destination="zX4-St-zDm" id="k4F-5L-pfo"/>
+                        <outlet property="waitLabel" destination="6IG-Rt-QxT" id="z59-ri-dbw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>

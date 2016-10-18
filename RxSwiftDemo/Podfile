@@ -1,0 +1,36 @@
+ source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+inhibit_all_warnings!
+use_frameworks!
+
+# App Dependencies
+
+def shared_pods
+    pod 'Moya/RxSwift', :git => 'https://github.com/Moya/Moya', :branch => 'swift-3.0'
+    pod 'ObjectMapper', '2.0.0'
+    pod 'Moya-ObjectMapper', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper.git', :tag => '2.0-beta.1'
+    pod 'RxSwift',    '3.0.0-beta.1'
+    pod 'RxCocoa',    '3.0.0-beta.1'
+end
+
+target 'RxSwiftDemo' do
+    shared_pods
+end
+
+
+
+
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '3.0'
+            config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+            config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+            config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+            config.build_settings['ENABLE_BITCODE'] = "NO"
+        end
+    end
+end
+
